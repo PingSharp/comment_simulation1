@@ -30,3 +30,22 @@
     transform: rotate(360deg);
   }
 }
+.comment-box{
+  list-style: none;
+}
+.comment-item{
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.comment-item-name{
+  position: relative;
+  left: -45%;
+}
+.comment-item-time{
+  position: relative;
+  right: -45%;
+}
+.comment-item-content{
+ font-size: 1.2em;
+}
