@@ -40,12 +40,24 @@
 }
 .comment-item-name{
   position: relative;
-  left: -45%;
+  left: -41%;
 }
 .comment-item-time{
   position: relative;
-  right: -45%;
+  right: -31%;
 }
 .comment-item-content{
  font-size: 1.2em;
+}
+.comment-textarea{
+  margin-top: 10px;
+  width: 90%;
+  border-radius: 5px;
+  border-color: black;
+}
+.submitButton{
+  width: 90%;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 1.5em;
 }
