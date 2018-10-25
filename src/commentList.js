@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
+import CommentActions from './actionCreator';
 
-function CommentList ({comments}) {
+/* function CommentList ({comments}) {
     return(
         <ul className="comment-box">
             {
@@ -15,6 +16,20 @@ function CommentList ({comments}) {
             }
         </ul>
     )
-}
+} */
+class CommentList extends Component {  
+     componentDidMount() { 
+            CommentActions.loadComment(); 
+          } 
+ render() { 
+        const list = this.props.comments; 
+   return (   <ul className="comment-box"> 
+        {list.map((entry, i) => (  
+              <li key={`reponse-${i}`} className="comment-item"> 
+                    <p className="comment-item-name">{entry.name}</p> 
+                      <p className="comment-item-content">{entry.content}</p>
+                      <p className="comment-item-time">{entry.publishTime}</p> 
+                         </li>  
+                          ))}   </ul>    );   } }
 
 export default CommentList;

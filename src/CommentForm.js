@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import CommentActions from './actionCreator';
 
 class CommentForm extends Component{
     constructor(props){
@@ -18,12 +19,15 @@ class CommentForm extends Component{
             nameValue: event.target.value
         })
     }
+    handelAddComment=()=>{
+        CommentActions.addComment(this.state.value,this.state.nameValue);
+    }
     render(){
         return(
             <div>
                 <label>Your name:</label><input type="text"  onChange={this.handelNameChange}></input>
                 <textarea className="comment-textarea"  onChange={this.handelChange}></textarea>
-                <button className="submitButton" onClick={this.props.handelSubmit.bind(this,this.state.value,this.state.nameValue)}>submit</button>
+                <button className="submitButton" onClick={this.handelAddComment}>submit</button>
             </div>
         )
     }
