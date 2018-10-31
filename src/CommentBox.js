@@ -7,20 +7,21 @@ class CommentBox extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            comment: CommentStore.getComment(),
+        this.state = this.getOwnState();
+    }
+    getOwnState(){
+        return{
+            comment: CommentStore.getState()
         };
     }
-    _onChange=()=>{
-        this.setState({
-            comment: CommentStore.getComment(),
-        });
+    onChange=()=>{
+        this.setState(this.getOwnState);
     }
     componentDidMount(){
-        CommentStore.addChangeListener(this._onChange);
+        CommentStore.subscribe(this.onChange);
     }
     componentWillUnmount(){
-        CommentStore.removeChangeListener(this._onChange);
+        CommentStore.unsubscribe(this.onChange);
     }
     render(){
         return(

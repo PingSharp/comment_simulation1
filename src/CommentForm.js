@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import CommentActions from './actionCreator';
+import CommentStore from './stores/CommentStore';
 
 class CommentForm extends Component{
     constructor(props){
@@ -20,7 +21,7 @@ class CommentForm extends Component{
         })
     }
     handelAddComment=()=>{
-        CommentActions.addComment(this.state.value,this.state.nameValue);
+       CommentStore.dispatch(CommentActions.addComment(this.state.value,this.state.nameValue));
     }
     render(){
         return(

@@ -22,7 +22,7 @@ class CommentList extends Component {
             CommentActions.loadComment(); 
           } 
  render() { 
-        const list = this.props.comments; 
+        const list = this.props.comments.comment; 
    return (   <ul className="comment-box"> 
         {list.map((entry, i) => (  
               <li key={`reponse-${i}`} className="comment-item"> 
