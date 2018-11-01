@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import CommentActions from './actionCreator';
-
+import CommentStore from './stores/CommentStore';
 /* function CommentList ({comments}) {
     return(
         <ul className="comment-box">
@@ -19,7 +19,7 @@ import CommentActions from './actionCreator';
 } */
 class CommentList extends Component {  
      componentDidMount() { 
-            CommentActions.loadComment(); 
+            CommentStore.dispatch(CommentActions.loadComment()); 
           } 
  render() { 
         const list = this.props.comments.comment; 

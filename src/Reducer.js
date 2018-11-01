@@ -5,9 +5,9 @@ export default (state,action) =>{
 
     switch(action.type){
         case ActionTypes.LOAD_COMMENT_SUCCESS:
-        return{...state,[payload.comment]:state[payload.comment]};
+        return{...state,comment:action.payload.comment};
         case ActionTypes.ADD_COMMENT_SUCCESS:
-        return{...state,[payload.comment]:state[payload.comment]};
+        return{...state,comment:action.payload.comment};
         default:
         return state;
     }

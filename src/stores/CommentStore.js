@@ -1,5 +1,6 @@
-import {createStore} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import reducer from '../Reducer';
+import thunkMiddleware from 'redux-thunk';
 
 const initValues = {
     'comment':[{
@@ -21,7 +22,8 @@ const initValues = {
         "id": 3
       }],
 }
-const CommentStore = createStore(reducer,initValues);
+const configureStore = applyMiddleware(thunkMiddleware)(createStore);
+const CommentStore = configureStore(reducer,initValues);
 /* let comment = [];
 function loadComment(newComment){
     comment = newComment;
